@@ -1,0 +1,18 @@
+<!-- this extends means that the blocks here should replace all the
+    corresponding block sections in base.html -->
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Register{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="username">Username</label>
+    <!-- required means the browser should not submit until both those forms are filled -->
+    <input name="username" id="username" required>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required>
+    <input type="submit" value="Register">
+  </form>
+{% endblock %}
